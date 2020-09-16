@@ -54,3 +54,23 @@ UserSettings
 - All endpoints must be tested
 - All endpoints must be documented
 - All endpoints should validate their inputs
+
+## How to use sqlite3/sqlite
+
+`sqlite3` is a wrapper around SQLite but doesn't provide a promise based API. Therefore, we use another wrapper which is `sqlite` which offers a Promise API around `sqlite3`.
+
+- Run mutations
+
+```
+// INSERT, CREATE TABLE, UPDATE etc.
+await db.run(sqlMutation)
+```
+
+- Run queries
+
+```
+// Get one item
+await db.get(sqlQuery)
+// Get several items
+await db.all(sqlQuery)
+```
